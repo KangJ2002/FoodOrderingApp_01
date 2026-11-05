@@ -36,13 +36,27 @@
         android:id="@+id/nextButton"
         android:layout_width="160dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/addtocartshape"
+        app:backgroundTint="@null"
         android:text="Next"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/designByText"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="593dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/designByText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:text="Design By\n강준혁_5945823"
+        android:textColor="@color/startColor"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
