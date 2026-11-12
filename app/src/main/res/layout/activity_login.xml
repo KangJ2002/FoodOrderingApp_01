@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".LoginActivity">
+
+    <!-- ① 로고 -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ② 앱 이름 -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Waves Of Food"
+        android:textColor="@color/startColor"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/logoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ③ 부제목 -->
+    <TextView
+        android:id="@+id/subText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deliever Favorite Food"
+        android:textColor="@color/endColor"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ④ "Login To Your Account" -->
+    <TextView
+        android:id="@+id/loginTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Login To Your Account"
+        android:textColor="@color/startColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/subText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ⑤ 이메일 입력칸 -->
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/edittextshape"
+        android:elevation="4dp"
+        android:hint="Email or Phone Number"
+        android:inputType="textEmailAddress"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/loginTitleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ⑥ 비밀번호 입력칸 -->
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/edittextshape"
+        android:elevation="4dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/emailInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ⑦ "Or" / "Continue With" -->
+    <TextView
+        android:id="@+id/orText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:text="Or\nContinue With"
+        android:textColor="@color/textColor"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/passwordInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ⑧ Facebook 버튼 (왼쪽) -->
+    <Button
+        android:id="@+id/facebookButton"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/whitebutton"
+        app:backgroundTint="@null"
+        android:drawableStart="@drawable/facebook"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:text="Facebook"
+        android:textAllCaps="false"
+        android:textColor="@color/textColor"
+        app:layout_constraintTop_toBottomOf="@id/orText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/googleButton" />
+
+    <!-- ⑨ Google 버튼 (오른쪽) -->
+    <Button
+        android:id="@+id/googleButton"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/whitebutton"
+        app:backgroundTint="@null"
+        android:drawableStart="@drawable/google"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:text="Google"
+        android:textAllCaps="false"
+        android:textColor="@color/textColor"
+        app:layout_constraintTop_toTopOf="@id/facebookButton"
+        app:layout_constraintStart_toEndOf="@id/facebookButton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ⑩ Login 버튼 -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/addtocartshape"
+        app:backgroundTint="@null"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/facebookButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ⑪ "Don't Have Account?" -->
+    <TextView
+        android:id="@+id/signUpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Don't Have Account?"
+        android:textColor="@color/startColor"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/loginButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ⑫ 맨 아래 글씨 -->
+    <TextView
+        android:id="@+id/designByText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Design By\n강준혁_5945823"
+        android:textColor="@color/startColor"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
