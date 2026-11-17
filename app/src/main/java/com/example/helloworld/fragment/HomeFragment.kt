@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.interfaces.ItemClickListener
+import com.denzcoskun.imageslider.models.SlideModel
 import com.example.helloworld.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +40,30 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        // 슬라이더에 넣을 사진 목록
+        val imageList = ArrayList<SlideModel>()
+        imageList.add(SlideModel(R.drawable.banner1, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.banner2, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.banner3, ScaleTypes.FIT))
+
+        // 슬라이더를 찾아서 사진 목록 넣기
+        val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider)
+        imageSlider.setImageList(imageList)
+
+        // 사진을 눌렀을 때
+        imageSlider.setItemClickListener(object : ItemClickListener {
+            override fun doubleClick(position: Int) {
+            }
+
+            override fun onItemSelected(position: Int) {
+                val itemMessage = "Selected Image $position"
+                Toast.makeText(requireContext(), itemMessage, Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        return view
     }
 
     companion object {
